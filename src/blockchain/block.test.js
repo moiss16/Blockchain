@@ -9,7 +9,7 @@ describe ('Block', () => {
     beforeEach(() => {
         timestamp = new Date(2010, 0, 1);
         previousBlock = Block.genesis;
-        data = 'transct0';
+        data = 'transction0';
         hash = "hash0";
     });
 
@@ -34,7 +34,7 @@ describe ('Block', () => {
         const block = Block.hash( timestamp, previousBlock, data);
 
         hash = Block.hash(timestamp, previousBlock.hash, data);
-        const hasOutput = "87c3cf370c94a4c239f50115ee34b4b66f421d572b7064d60c3809b9d33a3b06";
+        const hasOutput = "c5057e32ba4a79fe508a63056b839a2b415c4349652ea648c7ca890165903dc9";
 
         expect(hash).toEqual(hasOutput);
     });
