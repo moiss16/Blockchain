@@ -4,8 +4,14 @@ import Block from './src/blockchain/block';
 const { name, version, author } = PKG;
 console.log(`${name} v${version} ${author}`);
 
-const block = new Block(Date.now(), 'pr3vi0us-h4sh', 'h4sh', 'd4ta');
+const { genesis } = Block; 
+console.log(genesis.toString());
+
+const block = new Block(Date.now(), genesis.hash, 'h4sh', 'd4ta');
 console.log(block.toString());
+
+const block2 = new Block(Date.now(), block.hash, 'h4sh/block2', 'd4t4/2');
+console.log(block2.toString());
 
 
 
